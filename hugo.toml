@@ -1,0 +1,36 @@
+baseURL = "https://moyanzhu01.github.io/"
+languageCode = "en"
+title = "My Research Notes"
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+
+[params]
+  defaultTheme = "auto"
+  description = "Ph.D. Candidate in Finance | Asset Pricing & Macro"
+  
+  [params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = "Welcome to my personal website. I document my learning process in Finance, SAS, and Python here."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/your-github-id"
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archive"
+  url = "/archives/"
+  weight = 10
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

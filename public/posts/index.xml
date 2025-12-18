@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on My Research Notes</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on My Research Notes</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math Formula Test</title>
+      <link>http://localhost:1313/posts/test-math/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/test-math/</guid>
+      <description>&lt;h2 id=&#34;asset-pricing-model&#34;&gt;Asset Pricing Model&lt;/h2&gt;
+&lt;p&gt;Here is an inline formula: $E[R_i] - R_f = \beta_i(E[R_m] - R_f)$.&lt;/p&gt;
+&lt;p&gt;Here is a block formula (CAPM):&lt;/p&gt;
+&lt;p&gt;$$
+r_{i,t} = \alpha_i + \beta_i r_{m,t} + \epsilon_{i,t}
+$$&lt;/p&gt;
+&lt;p&gt;Where $\epsilon_{i,t} \sim N(0, \sigma^2)$.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
