@@ -1,6 +1,6 @@
 baseURL = "https://moyanzhu01.github.io/"
 languageCode = "en"
-title = "My Research Notes"
+title = "Moyan Zhu"
 theme = "PaperMod"
 
 enableRobotsTXT = true
@@ -26,6 +26,16 @@ buildFuture = false
 [params.label]
 text = "Moyan Zhu"      # 网站左上角显示的文字（通常写你的名字）
 
+  [params.assets]
+    # 浏览器标签页图标（Favicon）
+    favicon = "img/favicon.png"              # 默认图标（可以是 .ico 或 .png）
+    favicon16x16 = "img/favicon.png"          # 16x16 像素图标
+    favicon32x32 = "img/favicon.png"          # 32x32 像素图标
+    apple_touch_icon = "img/favicon.png"      # Apple 设备图标（建议 180x180）
+    safari_pinned_tab = "img/favicon.png"     # Safari 固定标签页图标（SVG 格式）
+    theme_color = "#2e2e33"                # 主题颜色（浏览器地址栏颜色）
+    msapplication_TileColor = "#2e2e33"   # Windows 磁贴颜色
+
 [[menu.main]]
   identifier = "about"
   name = "About"
@@ -43,12 +53,6 @@ text = "Moyan Zhu"      # 网站左上角显示的文字（通常写你的名字
   name = "Blog"
   url = "/posts/"
   weight = 30
-
-[[menu.main]]
-  identifier = "search"
-  name = "Search"
-  url = "/search/"
-  weight = 40
 
 [markup]
   [markup.goldmark]
