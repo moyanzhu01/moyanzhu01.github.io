@@ -9,15 +9,22 @@ buildFuture = false
 
 [params]
   defaultTheme = "auto"
-  description = "Ph.D. Candidate in Finance | Asset Pricing & Macro"
+  description = "Ph.D. Candidate in Finance"
   
   [params.homeInfoParams]
-    Title = "Hi there 👋"
-    Content = "Welcome to my personal website. I document my learning process in Finance, SAS, and Python here."
+    Title = "Hi, I'm Moyan Zhu 👋"
+    Content = """
+    Ph.D. Candidate in Finance at University of International Business and Economics.
+    
+    Focusing on Empirical Asset Pricing, and Market Micro-structure.
+    """
+    imageUrl = "img/avatar.png"     # 这里填你刚才拖进去的头像文件名
+    imageLayout = "same"            # 图片居中 (可选: "profile" 并排显示, "same" 或其他值居中显示)
+    imageWidth = 300                # 图片宽度（像素），默认 150
+    imageHeight = 400               # 图片高度（像素），默认 150
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/your-github-id"
+[params.label]
+text = "Moyan Zhu"      # 网站左上角显示的文字（通常写你的名字）
 
 [[menu.main]]
   identifier = "about"

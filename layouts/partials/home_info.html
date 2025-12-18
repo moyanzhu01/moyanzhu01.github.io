@@ -1,0 +1,48 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    {{- if and .imageUrl .imageLayout (eq .imageLayout "profile") }}
+    <div class="entry-header" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+        {{- if .imageUrl -}}
+        {{- $imgUrl := .imageUrl }}
+        {{- if not (urls.Parse $imgUrl).IsAbs }}
+            {{- if not (hasPrefix $imgUrl "/") }}
+                {{- $imgUrl = printf "/%s" $imgUrl }}
+            {{- end }}
+        {{- end }}
+        {{- $imgWidth := .imageWidth | default 150 }}
+        {{- $imgHeight := .imageHeight | default 150 }}
+        <img draggable="false" src="{{ $imgUrl }}" alt="avatar" title="avatar"
+            style="border-radius: 50%; width: {{ $imgWidth }}px; height: {{ $imgHeight }}px; object-fit: cover; flex-shrink: 0;" />
+        {{- end }}
+        <h1 style="margin: 0; flex: 1;">{{ .Title | markdownify }}</h1>
+    </div>
+    {{- else if .imageUrl }}
+    <header class="entry-header">
+        {{- $imgUrl := .imageUrl }}
+        {{- if not (urls.Parse $imgUrl).IsAbs }}
+            {{- if not (hasPrefix $imgUrl "/") }}
+                {{- $imgUrl = printf "/%s" $imgUrl }}
+            {{- end }}
+        {{- end }}
+        <div style="text-align: center; margin-bottom: 20px;">
+            {{- $imgWidth := .imageWidth | default 150 }}
+            {{- $imgHeight := .imageHeight | default 150 }}
+            <img draggable="false" src="{{ $imgUrl }}" alt="avatar" title="avatar"
+                style="border-radius: 50%; width: {{ $imgWidth }}px; height: {{ $imgHeight }}px; object-fit: cover; margin: 0 auto; display: block;" />
+        </div>
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    {{- else }}
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    {{- end }}
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
+
