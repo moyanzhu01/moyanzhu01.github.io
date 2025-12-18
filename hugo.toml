@@ -20,15 +20,28 @@ buildFuture = false
     url = "https://github.com/your-github-id"
 
 [[menu.main]]
-  identifier = "archives"
-  name = "Archive"
-  url = "/archives/"
+  identifier = "about"
+  name = "About"
+  url = "/about/"
   weight = 10
+
+[[menu.main]]
+  identifier = "research"
+  name = "Research"
+  url = "/research/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Blog"
+  url = "/posts/"
+  weight = 30
+
 [[menu.main]]
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 20
+  weight = 40
 
 [markup]
   [markup.goldmark]

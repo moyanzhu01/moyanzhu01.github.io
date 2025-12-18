@@ -9,6 +9,14 @@
     <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;I am a Ph.D. Candidate in Finance Engineering at CSBF, University of International Business and Economics. My research interests lie at the intersection of &lt;strong&gt;Market Micro-Structure&lt;/strong&gt; and &lt;strong&gt;Empirical Asset Pricing&lt;/strong&gt;, with a particular focus on the implications of market crises and derivative markets.&lt;/p&gt;
+&lt;p&gt;In terms of methodology, I specialize in quantitative analysis using &lt;strong&gt;SAS&lt;/strong&gt; and strictly adhere to reproducible research standards. I am also exploring the potential application of &lt;strong&gt;Generative Artificial Intelligence&lt;/strong&gt; in financial research.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Math Formula Test</title>
       <link>http://localhost:1313/posts/test-math/</link>
       <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
