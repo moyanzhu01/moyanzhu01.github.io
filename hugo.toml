@@ -24,7 +24,7 @@ buildFuture = false
     imageHeight = 400               # 图片高度（像素），默认 150
 
 [params.label]
-text = "Moyan Zhu"      # 网站左上角显示的文字（通常写你的名字）
+text = "Moyan Zhu"      
 
   [params.assets]
     # 浏览器标签页图标（Favicon）

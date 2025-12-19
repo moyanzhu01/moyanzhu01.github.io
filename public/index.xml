@@ -6,8 +6,24 @@
     <description>Recent content on Moyan Zhu</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DOW-loop: Notions and Usages</title>
+      <link>http://localhost:1313/posts/dow-loop/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/dow-loop/</guid>
+      <description>&lt;h2 id=&#34;the-structure-of-dow-loop&#34;&gt;The structure of DOW-loop&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-SAS&#34; data-lang=&#34;SAS&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;DATA &lt;/span&gt;...;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&amp;lt;stuff done before the loop&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#66d9ef&#34;&gt;DO&lt;/span&gt; &amp;lt;&lt;span style=&#34;color:#66d9ef&#34;&gt;index&lt;/span&gt; specs&amp;gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;UNTIL&lt;/span&gt; (break-event);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#66d9ef&#34;&gt;SET&lt;/span&gt; A;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&amp;lt;stuff done for each record&amp;gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;END&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;stuff done after the loop ...&amp;gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A DOW-loop separates the data step into three isolated parts. It is the most natural way to enforce different instructions before, in and after the loop. In most situation where DOW-loop is applicable, the input dataset is grouped or sorted, and the break-event is &lt;code&gt;last.group_var&lt;/code&gt;. In such a case, the DOW-loop divides actions to three steps:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About Me</title>
       <link>http://localhost:1313/about/</link>
@@ -15,19 +31,6 @@
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I am a Ph.D. Candidate in Finance Engineering at CSBF, University of International Business and Economics. My research interests lie at the intersection of &lt;strong&gt;Market Micro-Structure&lt;/strong&gt; and &lt;strong&gt;Empirical Asset Pricing&lt;/strong&gt;, with a particular focus on the implications of market crises and derivative markets.&lt;/p&gt;
 &lt;p&gt;In terms of methodology, I specialize in quantitative analysis using &lt;strong&gt;SAS&lt;/strong&gt; and strictly adhere to reproducible research standards. I am also exploring the potential application of &lt;strong&gt;Generative Artificial Intelligence&lt;/strong&gt; in financial research.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Math Formula Test</title>
-      <link>http://localhost:1313/posts/test-math/</link>
-      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/test-math/</guid>
-      <description>&lt;h2 id=&#34;asset-pricing-model&#34;&gt;Asset Pricing Model&lt;/h2&gt;
-&lt;p&gt;Here is an inline formula: $E[R_i] - R_f = \beta_i(E[R_m] - R_f)$.&lt;/p&gt;
-&lt;p&gt;Here is a block formula (CAPM):&lt;/p&gt;
-&lt;p&gt;$$
-r_{i,t} = \alpha_i + \beta_i r_{m,t} + \epsilon_{i,t}
-$$&lt;/p&gt;
-&lt;p&gt;Where $\epsilon_{i,t} \sim N(0, \sigma^2)$.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Research</title>

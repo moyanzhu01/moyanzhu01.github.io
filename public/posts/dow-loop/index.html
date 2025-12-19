@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.152.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Moyan Zhu</title>
-
-<meta name="description" content="Ph.D. Candidate in Finance">
+<title>DOW-loop: Notions and Usages | Moyan Zhu</title>
+<meta name="keywords" content="">
+<meta name="description" content="The structure of DOW-loop
+DATA ...;
+	&lt;stuff done before the loop&gt;;
+	DO &lt;index specs&gt; UNTIL (break-event);
+		SET A;
+		&lt;stuff done for each record&gt;;
+    END;
+    &lt;stuff done after the loop ...&gt;;
+RUN;
+A DOW-loop separates the data step into three isolated parts. It is the most natural way to enforce different instructions before, in and after the loop. In most situation where DOW-loop is applicable, the input dataset is grouped or sorted, and the break-event is last.group_var. In such a case, the DOW-loop divides actions to three steps:">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/">
+<link rel="canonical" href="http://localhost:1313/posts/dow-loop/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.fd5566c526ae48aadabd950798a2dc3568536401560eae5caac3765a42a9e7b5.css" integrity="sha256-/VVmxSauSKravZUHmKLcNWhTZAFWDq5cqsN2WkKp57U=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/img/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/img/favicon.png">
@@ -19,8 +27,7 @@
 <link rel="mask-icon" href="http://localhost:1313/img/favicon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dow-loop/">
 <noscript>
     <style>
         #theme-toggle,
@@ -87,7 +94,7 @@
     });
 </script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -134,40 +141,41 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <img draggable="false" src="/img/avatar.png" alt="avatar" title="avatar"
-                style="border-radius: 50%; width: 300px; height: 400px; object-fit: cover; margin: 0 auto; display: block;" />
-        </div>
-        <h1>Hi, I&rsquo;m Moyan Zhu 👋</h1>
-    </header>
-    <div class="entry-content">
-        <pre><code>Ph.D. Candidate in Finance at University of International Business and Economics.
+<main class="main">
 
-Focusing on Empirical Asset Pricing, and Market Micro-structure.
-</code></pre>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      DOW-loop: Notions and Usages
+    </h1>
+    <div class="post-meta"><span title='2025-12-19 00:00:00 +0000 UTC'>December 19, 2025</span>
 
-    </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
 </div>
+  </header> 
+  <div class="post-content"><h2 id="the-structure-of-dow-loop">The structure of DOW-loop<a hidden class="anchor" aria-hidden="true" href="#the-structure-of-dow-loop">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SAS" data-lang="SAS"><span style="display:flex;"><span><span style="color:#66d9ef">DATA </span>...;
+</span></span><span style="display:flex;"><span>	&lt;stuff done before the loop&gt;;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">DO</span> &lt;<span style="color:#66d9ef">index</span> specs&gt; <span style="color:#66d9ef">UNTIL</span> (break-event);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">SET</span> A;
+</span></span><span style="display:flex;"><span>		&lt;stuff done for each record&gt;;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">END</span>;
+</span></span><span style="display:flex;"><span>    &lt;stuff done after the loop ...&gt;<span style="color:#66d9ef">;
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">RUN;</span>
+</span></span></code></pre></div><p>A DOW-loop separates the data step into three isolated parts. It is the most natural way to enforce different instructions before, in and after the loop. In most situation where DOW-loop is applicable, the input dataset is grouped or sorted, and the break-event is <code>last.group_var</code>. In such a case, the DOW-loop divides actions to three steps:</p>
+<ol>
+<li>between the top of the implied loop (of data step) and before the first observation in a <code>by group</code> is read, that is, do some preparation before go through observations in a group;</li>
+<li>for each observation in the <code>by group</code>;</li>
+<li>after the last record in the <code>by group</code>  and before the bottom of the implied loop. It is often used to generate some summary variable (it&rsquo;s like <code>count, mean, sum</code> and so on).</li>
+</ol>
 
-    </footer>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">DOW-loop: Notions and Usages
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>The structure of DOW-loop DATA ...; &lt;stuff done before the loop&gt;; DO &lt;index specs&gt; UNTIL (break-event); SET A; &lt;stuff done for each record&gt;; END; &lt;stuff done after the loop ...&gt;; RUN; A DOW-loop separates the data step into three isolated parts. It is the most natural way to enforce different instructions before, in and after the loop. In most situation where DOW-loop is applicable, the input dataset is grouped or sorted, and the break-event is last.group_var. In such a case, the DOW-loop divides actions to three steps:
-...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-19 00:00:00 +0000 UTC'>December 19, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to DOW-loop: Notions and Usages" href="http://localhost:1313/posts/dow-loop/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     
